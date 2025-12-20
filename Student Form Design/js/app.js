@@ -63,18 +63,22 @@ userForm.addEventListener("submit", (e) => {
     
     e.preventDefault();
 
-    let user = {
+    function etelaat () {
+        return {
+            id: Date.now(),
+            firstName: inputUserName.value,
+            lastName: inputUserLastName.value,
+            userAge: Number(inputUserAge.value),
+            userJob: inputUserJob.value,
+            userGmail: inputUserGmail.value,
+            userPostalCode: inputUserPostalCode.value,
+            userAddress: inputUserAddress.value,
+        }
+    }
 
-        id: Date.now(),
-        firstName: inputUserName.value,
-        lastName: inputUserLastName.value,
-        userAge: Number(inputUserAge.value),
-        userJob: inputUserJob.value,
-        userGmail: inputUserGmail.value,
-        userPostalCode: inputUserPostalCode.value,
-        userAddress: inputUserAddress.value,
-    
-    };
+    let user = etelaat();
+
+
 
     if (user.firstName.trim().length <= 2){
         alert("اسم وارد شده کوتاهه (بیشتر از 2 حرف وارد کن)");
